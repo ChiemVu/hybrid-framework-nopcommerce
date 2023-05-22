@@ -15,7 +15,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 
-public class Level_03_Page_Object extends BasePage {
+public class Level_03_Page_Object_01_Register extends BasePage {
 	private HomePageObject homePage;
 	private RegisterPageObject registerPage;
 	private WebDriver driver;
@@ -35,8 +35,7 @@ public class Level_03_Page_Object extends BasePage {
 		firstName = "Vu";
 		lastName ="Chiem";
 		emailAddress = "vtc" + generateFakeNumber() + "@gmail.com";
-		password ="123456";
-		
+		password ="123456";		
 	}
 
 	@Test
@@ -52,8 +51,7 @@ public class Level_03_Page_Object extends BasePage {
 		Assert.assertEquals(registerPage.getLastNameErrorMessage(), "Last name is required.");
 		Assert.assertEquals(registerPage.getEmailErrorMessage(), "Email is required.");
 		Assert.assertEquals(registerPage.getPasswordErrorMessage(), "Password is required.");
-		Assert.assertEquals(registerPage.getConfirmPasswordErrorMessage(), "Password is required.");
-		
+		Assert.assertEquals(registerPage.getConfirmPasswordErrorMessage(), "Password is required.");		
 	}
 
 	@Test
