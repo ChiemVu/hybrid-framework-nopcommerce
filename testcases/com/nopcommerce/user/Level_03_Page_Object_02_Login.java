@@ -1,20 +1,17 @@
 package com.nopcommerce.user;
 
-import org.testng.annotations.Test;
-
-import PageObjects.HomePageObject;
-import PageObjects.LoginPageObject;
-import PageObjects.RegisterPageObject;
-import commons.BasePage;
-
-import org.testng.annotations.BeforeClass;
-
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
+import commons.BasePage;
+import pageObjects.nopCommerce.HomePageObject;
+import pageObjects.nopCommerce.LoginPageObject;
+import pageObjects.nopCommerce.RegisterPageObject;
 
 public class Level_03_Page_Object_02_Login extends BasePage {
 	private WebDriver driver;

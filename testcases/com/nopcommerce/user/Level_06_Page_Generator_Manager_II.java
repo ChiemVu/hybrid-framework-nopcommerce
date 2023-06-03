@@ -10,21 +10,17 @@ import org.testng.annotations.Test;
 import commons.BaseTest;
 import pageObjects.nopCommerce.HomePageObject;
 import pageObjects.nopCommerce.LoginPageObject;
+import pageObjects.nopCommerce.MyAccountPageObject;
+import pageObjects.nopCommerce.PageGeneratorManager;
 import pageObjects.nopCommerce.RegisterPageObject;
 
-public class Level_06_Page_Generator_Manager_I extends BaseTest {
-	private WebDriver driver;
-	private String firstName, lastName, invalidEmail, notFoundEmail, existingEmail, password;
-	private RegisterPageObject registerPage;
-	private HomePageObject homePage;
-	private LoginPageObject loginPage;
+public class Level_06_Page_Generator_Manager_II extends BaseTest {
 	
 	@Parameters("browser")
 	@BeforeClass
 	public void beforeClass(String browserName) { 
 		driver = getBrowserDriver(browserName);
-		
-		homePage = new HomePageObject(driver);
+		homePage = PageGeneratorManager.getHomePage(driver);
 		
 		firstName = "Vu";
 		lastName ="Chiem";
@@ -108,10 +104,18 @@ public class Level_06_Page_Generator_Manager_I extends BaseTest {
 		homePage = loginPage.clickToLoginButton();
 		Assert.assertTrue(homePage.isMyAccountLinkDisplayed());
 		
+		myAccountPage = homePage.clickToMyAccountLink();
+		myAccountPage.clickToNewsletterCheckbox();
 	}
 	
 	@AfterClass
 	public void afterClass() {
 		driver.quit();
 	}
+	private WebDriver driver;
+	private String firstName, lastName, invalidEmail, notFoundEmail, existingEmail, password;
+	private RegisterPageObject registerPage;
+	private HomePageObject homePage;
+	private LoginPageObject loginPage;
+	private MyAccountPageObject myAccountPage;
 }
