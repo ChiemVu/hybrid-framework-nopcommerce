@@ -28,7 +28,7 @@ public class Level_06_Page_Generator_Manager_II extends BaseTest {
 		existingEmail = "vtc" + generateFakeNumber() + "@gmail.com";
 		password ="123456";
 		notFoundEmail = "vtcv45@gmail.com";
-		registerPage = homePage.clickToRegisterLink();
+		registerPage = homePage.openRegisterPage();
 		
 		registerPage.inputToFirstNameTextbox(firstName);
 		registerPage.inputToLastNameTextbox(lastName);
@@ -42,7 +42,7 @@ public class Level_06_Page_Generator_Manager_II extends BaseTest {
 
 	@Test
 	public void Login_01_Empty_Data() {
-		loginPage = homePage.clickToLoginLink();
+		loginPage = homePage.openLoginPage();
 		
 		loginPage.clickToLoginButton();
 		
@@ -51,7 +51,7 @@ public class Level_06_Page_Generator_Manager_II extends BaseTest {
 
 	@Test
 	public void Login_02_Invalid_Email() {
-		loginPage = homePage.clickToLoginLink();
+		loginPage = homePage.openLoginPage();
 		
 		loginPage.inputEmailTextbox(invalidEmail);
 		loginPage.inputPasswordTextbox(password);		
@@ -62,7 +62,7 @@ public class Level_06_Page_Generator_Manager_II extends BaseTest {
 
 	@Test
 	public void Login_03_Not_Found_Email() {
-		loginPage = homePage.clickToLoginLink();
+		loginPage = homePage.openLoginPage();
 		
 		loginPage.inputEmailTextbox(notFoundEmail);
 		loginPage.inputPasswordTextbox(password);		
@@ -74,7 +74,7 @@ public class Level_06_Page_Generator_Manager_II extends BaseTest {
 
 	@Test
 	public void Login_04_Existing_Email_Empty_Password() {
-		loginPage = homePage.clickToLoginLink();
+		loginPage = homePage.openLoginPage();
 		
 		loginPage.inputEmailTextbox(existingEmail);		
 		loginPage.clickToLoginButton();
@@ -84,7 +84,7 @@ public class Level_06_Page_Generator_Manager_II extends BaseTest {
 
 	@Test
 	public void Login_05_existing_Email_incorrect_Password() {
-		loginPage = homePage.clickToLoginLink();
+		loginPage = homePage.openLoginPage();
 		
 		loginPage.inputEmailTextbox(existingEmail);
 		loginPage.inputPasswordTextbox("123655");
@@ -96,7 +96,7 @@ public class Level_06_Page_Generator_Manager_II extends BaseTest {
 	
 	@Test
 	public void Login_06_valid_Email_Password() {
-		loginPage = homePage.clickToLoginLink();
+		loginPage = homePage.openLoginPage();
 		
 		loginPage.inputEmailTextbox(existingEmail);
 		loginPage.inputPasswordTextbox(password);
@@ -104,7 +104,7 @@ public class Level_06_Page_Generator_Manager_II extends BaseTest {
 		homePage = loginPage.clickToLoginButton();
 		Assert.assertTrue(homePage.isMyAccountLinkDisplayed());
 		
-		myAccountPage = homePage.clickToMyAccountLink();
+		myAccountPage = homePage.openMyAccountPage();
 		myAccountPage.clickToNewsletterCheckbox();
 	}
 	
