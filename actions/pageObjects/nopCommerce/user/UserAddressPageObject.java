@@ -1,13 +1,13 @@
-package pageObjects.nopCommerce;
+package pageObjects.nopCommerce.user;
 
 import org.openqa.selenium.WebDriver;
 
 import commons.BasePage;
-import pageUIs.nopCommerce.MyAccountPageUI;
+import pageUIs.nopCommerce.User.MyAccountPageUI;
 
-public class AddressPageObject extends BasePage{
+public class UserAddressPageObject extends BasePage{
 	private WebDriver driver;
-	public AddressPageObject(WebDriver driver) {
+	public UserAddressPageObject(WebDriver driver) {
 		this.driver = driver;
 	}
 	public void clickToNewsletterCheckbox() {

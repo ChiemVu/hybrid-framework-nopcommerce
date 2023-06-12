@@ -8,18 +8,18 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import commons.BaseTest;
-import pageObjects.nopCommerce.AddressPageObject;
-import pageObjects.nopCommerce.BackInStockSubscriptionsPageObject;
-import pageObjects.nopCommerce.ChangePasswordPageObject;
-import pageObjects.nopCommerce.DownloadableProductPageObject;
-import pageObjects.nopCommerce.HomePageObject;
-import pageObjects.nopCommerce.LoginPageObject;
-import pageObjects.nopCommerce.MyAccountPageObject;
-import pageObjects.nopCommerce.MyProductReviewsPageObject;
-import pageObjects.nopCommerce.OrderPageObject;
-import pageObjects.nopCommerce.PageGeneratorManager;
-import pageObjects.nopCommerce.RegisterPageObject;
-import pageObjects.nopCommerce.RewardPointsPageObject;
+import commons.PageGeneratorManager;
+import pageObjects.nopCommerce.user.UserAddressPageObject;
+import pageObjects.nopCommerce.user.UserBackInStockSubscriptionsPageObject;
+import pageObjects.nopCommerce.user.UserChangePasswordPageObject;
+import pageObjects.nopCommerce.user.UserDownloadableProductPageObject;
+import pageObjects.nopCommerce.user.UserHomePageObject;
+import pageObjects.nopCommerce.user.UserLoginPageObject;
+import pageObjects.nopCommerce.user.UserMyAccountPageObject;
+import pageObjects.nopCommerce.user.UserMyProductReviewsPageObject;
+import pageObjects.nopCommerce.user.UserOrderPageObject;
+import pageObjects.nopCommerce.user.UserRegisterPageObject;
+import pageObjects.nopCommerce.user.UserRewardPointsPageObject;
 
 public class Level_07_Switch_Page extends BaseTest {
 	
@@ -27,7 +27,7 @@ public class Level_07_Switch_Page extends BaseTest {
 	@BeforeClass
 	public void beforeClass(String browserName) { 
 		driver = getBrowserDriver(browserName);
-		homePage = PageGeneratorManager.getHomePage(driver);
+		homePage = PageGeneratorManager.getUserHomePage(driver);
 		
 		firstName = "Vu";
 		lastName ="Chiem";
@@ -37,7 +37,7 @@ public class Level_07_Switch_Page extends BaseTest {
 
 	@Test
 	public void Login_01_REgister_To_System() {
-		registerPage = homePage.openRegisterPage();
+		registerPage = homePage.openUserRegisterPage();
 		
 		registerPage.inputToFirstNameTextbox(firstName);
 		registerPage.inputToLastNameTextbox(lastName);
@@ -51,7 +51,7 @@ public class Level_07_Switch_Page extends BaseTest {
 
 	@Test
 	public void Login_02_Login_To_System() {
-		loginPage = homePage.openLoginPage();
+		loginPage = homePage.openUserLoginPage();
 		
 		loginPage.inputEmailTextbox(existingEmail);
 		loginPage.inputPasswordTextbox(password);
@@ -85,15 +85,15 @@ public class Level_07_Switch_Page extends BaseTest {
 	}
 	private WebDriver driver;
 	private String firstName, lastName, existingEmail, password;
-	private RegisterPageObject registerPage;
-	private HomePageObject homePage;
-	private LoginPageObject loginPage;
-	private MyAccountPageObject myAccountPage;
-	private AddressPageObject addressPage;
-	private OrderPageObject orderPage;
-	private DownloadableProductPageObject downloadableProductPage;
-	private BackInStockSubscriptionsPageObject backInStockSubscriptionsPage;
-	private RewardPointsPageObject rewardPointPage;
-	private ChangePasswordPageObject changePasswordPage;
-	private MyProductReviewsPageObject myProductReviewsPage;
+	private UserRegisterPageObject registerPage;
+	private UserHomePageObject homePage;
+	private UserLoginPageObject loginPage;
+	private UserMyAccountPageObject myAccountPage;
+	private UserAddressPageObject addressPage;
+	private UserOrderPageObject orderPage;
+	private UserDownloadableProductPageObject downloadableProductPage;
+	private UserBackInStockSubscriptionsPageObject backInStockSubscriptionsPage;
+	private UserRewardPointsPageObject rewardPointPage;
+	private UserChangePasswordPageObject changePasswordPage;
+	private UserMyProductReviewsPageObject myProductReviewsPage;
 }
