@@ -71,7 +71,7 @@ public class Level_08_Switch_Role extends BaseTest {
 
 	@AfterClass
 	public void afterClass() {
-		//driver.quit();
+		driver.quit();
 	}
 	private WebDriver driver;
 	private String firstName, lastName, userEmailAddress, userPassword, adminEmaillAddress, adminPassword;
