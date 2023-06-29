@@ -500,7 +500,6 @@ public class BasePage {
 		return PageGeneratorManager.getAdminLoginPage(driver);
 	}
 
-	private long longTimeout = 30;
-	private long shortTimeout = 5;
+	private long longTimeout = GlobalConstants.LONG_TIME;
 
 }

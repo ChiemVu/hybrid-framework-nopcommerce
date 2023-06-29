@@ -39,7 +39,7 @@ public class BaseTest {
 		}else {
 			throw new RuntimeException("Browser name invalid");
 		}
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(GlobalConstants.LONG_TIME, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
 		driver.get(GlobalConstants.USER_PAGE_URL);
 		//driver.get("https://live.guru99.com/");
